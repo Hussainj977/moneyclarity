@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} | {{ site.title }}{% else %}{{ site.title }} — {{ site.description }}{% endif %}</title>
+  <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="stylesheet" href="/css/style.css">
+  <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:type" content="website">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="wrap">
+      <a class="brand" href="/">MoneyClarity</a>
+      <div class="nav-links">
+        <a href="/halal-personal-finance/">Halal Finance</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about/">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; {{ currentYear }} MoneyClarity by {{ site.author }}. Built for clarity, not clicks.</p>
+    </div>
+  </footer>
+</body>
+</html>
