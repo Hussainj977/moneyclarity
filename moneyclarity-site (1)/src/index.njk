@@ -2,14 +2,24 @@
 layout: base.njk
 title: Home
 ---
+
 <section class="hero">
-  <h1>Personal finance, made clear — not another guru's noise.</h1>
-  <p class="hero-sub">everydaymoneylab is for people who want honest, practical money guidance — including a dedicated track for halal personal finance — without the hype, the affiliate spam, or the "get rich" theatrics.</p>
-  <a class="btn" href="/halal-personal-finance/">Start with Halal Personal Finance →</a>
+  <h1>Master your money with confidence.</h1>
+
+  <p class="hero-sub">
+    EveryDayMoneyLab helps people make smarter financial decisions through
+    practical, easy-to-follow guides on budgeting, saving, investing,
+    debt management, credit cards, retirement planning, taxes,
+    side hustles, and building long-term wealth—without hype,
+    gimmicks, or get-rich-quick promises.
+  </p>
+
+  <a class="btn" href="/blog/">Start Learning →</a>
 </section>
 
 <section class="latest">
-  <h2>Latest posts</h2>
+  <h2>Latest Posts</h2>
+
   <ul class="post-list">
     {% for post in collections.posts %}
     <li>
@@ -17,19 +27,41 @@ title: Home
         <span class="post-list-title">{{ post.data.title }}</span>
         <span class="post-list-date">{{ post.data.date | readableDate }}</span>
       </a>
-      {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
+
+      {% if post.data.description %}
+      <p>{{ post.data.description }}</p>
+      {% endif %}
     </li>
     {% endfor %}
   </ul>
 </section>
 
 <section id="subscribe" class="subscribe">
-  <h2>Get everydaymoneylab in your inbox</h2>
-  <p>One email, only when there's something worth reading. No noise.</p>
+  <h2>Get EveryDayMoneyLab in your inbox</h2>
+
+  <p>
+    Actionable money tips, practical guides, and new articles.
+    No spam. Unsubscribe anytime.
+  </p>
+
   <form name="subscribe" method="POST" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="subscribe" />
-    <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
-    <input type="email" name="email" placeholder="you@example.com" required>
-    <button class="btn" type="submit">Subscribe</button>
+
+    <p class="hidden">
+      <label>Don't fill this out:
+        <input name="bot-field" />
+      </label>
+    </p>
+
+    <input
+      type="email"
+      name="email"
+      placeholder="you@example.com"
+      required
+    >
+
+    <button class="btn" type="submit">
+      Subscribe
+    </button>
   </form>
 </section>
